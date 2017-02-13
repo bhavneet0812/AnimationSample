@@ -48,27 +48,18 @@ class ListToGridVC: UIViewController {
         carsCollectionView.register(listViewNib, forCellWithReuseIdentifier: "ListViewCellID")
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // Toggle List To Grid or Grid To List
    
     @IBAction func toggleListToGrid(_ sender: UIButton){
         
         if toggleListToGridOutlet.isSelected == true{
-            toggleListToGridOutlet.isSelected = false
             
-            UIView.setAnimationDuration(1)
+            toggleListToGridOutlet.isSelected = false
             
         }else{
             
             toggleListToGridOutlet.isSelected = true
-            
-            UIView.setAnimationDuration(1)
             
         }
         
@@ -89,9 +80,7 @@ extension ListToGridVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        
-        
-        
+    
         switch indexPath.row {
             case 0:
             
@@ -101,7 +90,7 @@ extension ListToGridVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             
             default:
                 
-                if toggleListToGridOutlet.isSelected == true{
+                if toggleListToGridOutlet.isHighlighted == true{
                 
                     let cell = carsCollectionView.dequeueReusableCell(withReuseIdentifier: "ListViewCellID", for: indexPath) as! ListViewCell
                     let dataModel = Honda(JSON: carsData[indexPath.row-1])
@@ -118,10 +107,11 @@ extension ListToGridVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                     
                     return cell
                 }
-            
         }
 
     }
+    
+    // Size of Cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
         switch indexPath.row {

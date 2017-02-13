@@ -39,7 +39,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HONDA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDx-jE-fwU">
-                                                    <rect key="frame" x="8" y="8" width="358" height="24"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -70,12 +70,31 @@
                     </view>
                     <navigationItem key="navigationItem" title="$ Cars For Sale $" id="uAI-UI-pJL">
                         <barButtonItem key="backBarButtonItem" title="&lt;" id="yMN-lc-gbk"/>
-                        <barButtonItem key="rightBarButtonItem" image="GridViewBtn" id="vvi-6x-Ret">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pdU-zh-fIc">
-                                <rect key="frame" x="329" y="11" width="30" height="22"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="GridViewBtn" style="done" id="vvi-6x-Ret">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="pdU-zh-fIc">
+                                <rect key="frame" x="314" y="11" width="45" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="." image="ListViewBtn"/>
-                                <state key="selected" title="." image="GridViewBtn"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="GRID">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="ArialMT"/>
+                                                <font key="NSOriginalFont" size="15" name="ArialMT"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <state key="selected">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="LIST">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name=".SFNSText"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="toggleListToGrid:" destination="ow5-Xd-JFv" eventType="touchUpInside" id="ls4-qO-Z5Q"/>
                                 </connections>
@@ -115,6 +134,5 @@
     </scenes>
     <resources>
         <image name="GridViewBtn" width="25" height="14"/>
-        <image name="ListViewBtn" width="25" height="25"/>
     </resources>
 </document>
