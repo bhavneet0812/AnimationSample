@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridViewCellID" id="GFi-mt-95u" customClass="GridViewCell" customModule="ListToGridView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KhS-nL-P1U">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L  a   b   e    l " lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttj-ie-eMp">
+                        <rect key="frame" x="150" y="8" width="12" height="134"/>
+                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="21"/>
+                        <color key="textColor" red="0.33574336654060954" green="0.56069605803513123" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KhS-nL-P1U" firstAttribute="width" secondItem="GFi-mt-95u" secondAttribute="height" multiplier="1:1" id="04T-QA-1sD"/>
+                <constraint firstItem="Ttj-ie-eMp" firstAttribute="leading" secondItem="KhS-nL-P1U" secondAttribute="trailing" id="1y2-qT-NU3"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Ttj-ie-eMp" secondAttribute="bottom" id="6C4-e9-ViN"/>
+                <constraint firstItem="KhS-nL-P1U" firstAttribute="leading" secondItem="GFi-mt-95u" secondAttribute="leadingMargin" constant="-8" id="8e2-Hh-1kZ"/>
+                <constraint firstItem="KhS-nL-P1U" firstAttribute="top" secondItem="GFi-mt-95u" secondAttribute="topMargin" constant="-8" id="cwW-BU-bSw"/>
+                <constraint firstAttribute="bottomMargin" secondItem="KhS-nL-P1U" secondAttribute="bottom" constant="-8" id="nTe-S8-jSe"/>
+                <constraint firstItem="Ttj-ie-eMp" firstAttribute="top" secondItem="GFi-mt-95u" secondAttribute="topMargin" id="pqf-hx-zHx"/>
+                <constraint firstAttribute="trailingMargin" secondItem="Ttj-ie-eMp" secondAttribute="trailing" id="sbd-gl-ae4"/>
+            </constraints>
+            <size key="customSize" width="174" height="150"/>
+            <connections>
+                <outlet property="carImage" destination="KhS-nL-P1U" id="Glm-QS-Fdy"/>
+                <outlet property="carModel" destination="Ttj-ie-eMp" id="799-Y3-cHD"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="80"/>
+        </collectionViewCell>
+    </objects>
+</document>
