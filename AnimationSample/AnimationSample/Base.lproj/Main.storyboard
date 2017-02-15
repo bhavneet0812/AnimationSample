@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GalleryVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GalleryVC" customModule="AnimationSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-Hh-edc">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" red="0.21814572811126709" green="0.52776253223419189" blue="0.79857027530670166" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="597" id="mkd-qs-SSe"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WHH-gS-tQs">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keb-cY-Rxf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpP-LP-Tmk" userLabel="GridViewBtn">
+                                        <rect key="frame" x="274.5" y="13" width="50" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="DNY-7C-VUv"/>
+                                            <constraint firstAttribute="width" constant="50" id="Hs8-Ig-mww"/>
+                                        </constraints>
+                                        <state key="normal" title="GRID"/>
+                                        <state key="selected" title="GRID">
+                                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gridViewBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QId-zf-bA0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOl-gc-6cu" userLabel="ListViewBtn">
+                                        <rect key="frame" x="37.5" y="13" width="50" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ksf-el-fDa"/>
+                                            <constraint firstAttribute="height" constant="25" id="tua-WB-afJ"/>
+                                        </constraints>
+                                        <state key="normal" title="LIST"/>
+                                        <state key="selected" title="LIST">
+                                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="listViewBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZJZ-HX-vF8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNu-BG-L0m">
+                                        <rect key="frame" x="137" y="12.5" width="100" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="SJv-Tm-rm0"/>
+                                            <constraint firstAttribute="height" constant="25" id="bS0-ve-mXB"/>
+                                        </constraints>
+                                        <state key="normal" title="DELETE"/>
+                                        <state key="selected">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k4A-dF-XOF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UpP-LP-Tmk" firstAttribute="centerY" secondItem="keb-cY-Rxf" secondAttribute="centerY" id="0Rr-Rx-xT4"/>
+                                    <constraint firstItem="UpP-LP-Tmk" firstAttribute="centerX" secondItem="keb-cY-Rxf" secondAttribute="centerX" multiplier="1.6" id="2tu-Bd-rBK"/>
+                                    <constraint firstItem="JNu-BG-L0m" firstAttribute="centerX" secondItem="keb-cY-Rxf" secondAttribute="centerX" id="842-eO-oRd"/>
+                                    <constraint firstItem="gOl-gc-6cu" firstAttribute="centerY" secondItem="keb-cY-Rxf" secondAttribute="centerY" id="9pU-SG-Vec"/>
+                                    <constraint firstItem="gOl-gc-6cu" firstAttribute="centerX" secondItem="keb-cY-Rxf" secondAttribute="centerX" multiplier="1:3" id="dWH-yG-Sld"/>
+                                    <constraint firstItem="JNu-BG-L0m" firstAttribute="centerY" secondItem="keb-cY-Rxf" secondAttribute="centerY" id="kuT-dm-AF4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21814572811126709" green="0.52776253223419189" blue="0.79857027530670166" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="right" secondItem="vw6-Hh-edc" secondAttribute="right" id="6qC-hm-tcn"/>
+                            <constraint firstItem="keb-cY-Rxf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FHh-d7-osg"/>
+                            <constraint firstItem="keb-cY-Rxf" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" id="Mmf-OW-WLR"/>
+                            <constraint firstAttribute="right" secondItem="keb-cY-Rxf" secondAttribute="right" id="N4b-Kr-Rla"/>
+                            <constraint firstItem="vw6-Hh-edc" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" id="gbw-0v-bg6"/>
+                            <constraint firstItem="vw6-Hh-edc" firstAttribute="top" secondItem="keb-cY-Rxf" secondAttribute="bottom" id="p2X-MY-qza"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vw6-Hh-edc" secondAttribute="bottom" id="xEg-zK-X0W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteBtnOutlet" destination="JNu-BG-L0m" id="SXt-1K-KDK"/>
+                        <outlet property="gridViewBtnOutlet" destination="UpP-LP-Tmk" id="2rX-Qs-ZMc"/>
+                        <outlet property="imgCollectionView" destination="vw6-Hh-edc" id="ohm-yu-mQv"/>
+                        <outlet property="listViewBtnOutlet" destination="gOl-gc-6cu" id="K7d-x8-A84"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+</document>

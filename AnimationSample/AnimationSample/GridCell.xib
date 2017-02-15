@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridCellID" id="gTV-IL-0wX" customClass="GridCell" customModule="AnimationSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZqP-d5-Xpw">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ZqP-d5-Xpw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mdr-Fe-rNQ"/>
+                <constraint firstItem="ZqP-d5-Xpw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a6w-81-qKb"/>
+                <constraint firstAttribute="bottom" secondItem="ZqP-d5-Xpw" secondAttribute="bottom" id="cw3-dp-6tS"/>
+                <constraint firstAttribute="trailing" secondItem="ZqP-d5-Xpw" secondAttribute="trailing" id="feU-Jw-P2W"/>
+            </constraints>
+            <connections>
+                <outlet property="gridImage" destination="ZqP-d5-Xpw" id="G4J-et-hK1"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
