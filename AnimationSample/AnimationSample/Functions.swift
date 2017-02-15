@@ -59,7 +59,12 @@ func getImgSize( image: UIImage) -> CGSize? {
 //    
 //}
 
-// VIEW CASES
+// ENUM CASES
+
+enum ErrorMessage: String{
+    case FatalError = "Could Not Find Any Cell"
+}
+
 enum ViewCases{
     case List
     case Grid

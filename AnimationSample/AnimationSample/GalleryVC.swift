@@ -11,7 +11,6 @@ import UIKit.UIGestureRecognizerSubclass
 
 class GalleryVC: UIViewController {
     
-    
 // MARK: JSONData
     
     var JSONdata : [[String:Any]] = [
@@ -38,11 +37,9 @@ class GalleryVC: UIViewController {
         
         ]
     
-    
 // MARK: IBOUTLETS
     
     //Image Collection View
-    
     @IBOutlet weak var imgCollectionView: UICollectionView!
     
     @IBOutlet weak var listViewBtnOutlet: UIButton!
@@ -54,12 +51,8 @@ class GalleryVC: UIViewController {
     let gridLayout = GridFlowLayout()
     let listLayout = ListFlowLayout()
 
-    
-    // UPDATED DATA
-    
+    // Updated Data
     var updatedData : [IndexPath] = []
-
-    
     
 // MARK: GALLERYVC LIFE CYCLE
     
@@ -83,28 +76,26 @@ class GalleryVC: UIViewController {
         let listCell = UINib.init(nibName: "ListCell", bundle: nil)
         imgCollectionView.register(listCell, forCellWithReuseIdentifier: xib.ListCell.rawValue)
         
+        //Long Tap Gesture
         let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(didTap))
         imgCollectionView.addGestureRecognizer(longTapGesture)
+    
         imgCollectionView.allowsSelection = false
+
         listViewBtnOutlet.isSelected = true
         listViewBtnOutlet.isEnabled = false
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 // MARK: IBACTIONS
     
     @IBAction func deleteBtn(_ sender: UIButton) {
         
-   
         imgCollectionView.allowsSelection = false
         updatedData = updatedData.sorted().reversed()
         
         for index in updatedData {
+            
             JSONdata.remove(at: index.row)
             imgCollectionView.deleteItems(at: [index])
         }
@@ -119,8 +110,6 @@ class GalleryVC: UIViewController {
         imgCollectionView.reloadData()
         listViewBtnOutlet.isSelected = true
 
-        
-        
         UIView.animate(withDuration: 0.5, animations: {() -> Void in
             
             self.imgCollectionView.collectionViewLayout.invalidateLayout()
@@ -149,34 +138,33 @@ class GalleryVC: UIViewController {
             
         }, completion: {(true) in
             
-            
             self.listViewBtnOutlet.isSelected = false
             self.listViewBtnOutlet.isEnabled = true
-            
             
         })
 
     }
-    
+
+    //Long Press Gesture
     func didTap(gestureRecogniser : UILongPressGestureRecognizer) -> Void {
      
-        gestureRecogniser.allowableMovement = CGFloat(JSONdata.count)
         imgCollectionView.allowsMultipleSelection = true
+
+        gestureRecogniser.allowableMovement = CGFloat(JSONdata.count)
+        let point = gestureRecogniser.location(in: self.imgCollectionView)
+        guard let index = self.imgCollectionView.indexPathForItem(at: point) else { return }
+
         deleteBtnOutlet.isHidden = false
         deleteBtnOutlet.isEnabled = true
-        
+
         if gestureRecogniser.state == .ended{
           return
         }
            print(#function)
         
-        let point = gestureRecogniser.location(in: self.imgCollectionView)
-        let indexpath = self.imgCollectionView.indexPathForItem(at: point)
         
-        imgCollectionView.selectItem(at: indexpath, animated: true, scrollPosition: .centeredVertically)
-        
-        collectionView(imgCollectionView, didSelectItemAt: indexpath!)
-        
+                imgCollectionView.selectItem(at: index, animated: true, scrollPosition: .centeredVertically)
+        collectionView(imgCollectionView, didSelectItemAt: index)
         
     }
     
@@ -186,13 +174,11 @@ class GalleryVC: UIViewController {
 
 extension GalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         
         return JSONdata.count
         
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
@@ -222,42 +208,24 @@ extension GalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         let cell = imgCollectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 5
-        updatedData.append(indexPath)
+        if(!updatedData.contains(indexPath)){
+            updatedData.append(indexPath)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
         
         let cell = imgCollectionView.cellForItem(at: indexPath)
         updatedData.remove(at: updatedData.index(of : indexPath)!)
         cell?.layer.borderWidth = 0
         
         if updatedData.isEmpty{
+            
             deleteBtnOutlet.isHidden = true
             deleteBtnOutlet.isEnabled = false
-            
             imgCollectionView.allowsSelection = false
             
         }
         
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
