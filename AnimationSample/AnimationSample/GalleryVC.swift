@@ -110,7 +110,7 @@ class GalleryVC: UIViewController {
         imgCollectionView.reloadData()
         listViewBtnOutlet.isSelected = true
 
-        UIView.animate(withDuration: 0.5, animations: {() -> Void in
+        UIView.animate(withDuration: 0.33, animations: {() -> Void in
             
             self.imgCollectionView.collectionViewLayout.invalidateLayout()
             self.imgCollectionView.setCollectionViewLayout(self.listLayout, animated: true)
